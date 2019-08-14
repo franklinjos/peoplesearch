@@ -1,1 +1,1 @@
-# peoplesearch
+# People search app
