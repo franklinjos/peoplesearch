@@ -141,12 +141,14 @@ namespace PeopleSearch.Repository
         public Person Delete(int id)
         {
             Person person = personDbSet.Find(id);
+            Address address = addressDbSet.Find(id);
             if (person == null)
             {
                 throw new RecordNotFoundException(person.PersonId);
             }
 
             personDbSet.Remove(person);
+            addressDbSet.Remove(address);
             dataContext.SaveChanges();
             return person;
         }
