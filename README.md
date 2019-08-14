@@ -15,5 +15,34 @@ The system using SQLite as Database. Used ASP.NET Web API for building REST serv
 ## Front-end
 The system is using react for UI framework, styled-components for the styling needs, @blueprintjs for UI components. jest for unit testing.
 
+## Screen shots
+
+### Search 
+#### Initial
+![Alt text](snapshots/search.JPG?raw=true "Search")
+
+#### Results
+![Alt text](snapshots/search-res.JPG?raw=true "Search results")
+
+### Add person form 
+![Alt text](snapshots/add-person.JPG?raw=true "Add Person")
+
+### Skeleton loading
+![Alt text](snapshots/loading.JPG?raw=true "Skeleton loading")
+
+### Screen break point
+#### X-Small
+![Alt text](snapshots/breakpoint-xsmall.JPG?raw=true "x-small")
+
+### Small
+![Alt text](snapshots/breakpoint-small.JPG?raw=true "Small")
+
+### Medium
+![Alt text](snapshots/breakpoint-med1.JPG?raw=true "Medium")
+
+### Large
+![Alt text](snapshots/breakpoint-lrg.JPG?raw=true "Skeleton loading")
+
+
 
 
