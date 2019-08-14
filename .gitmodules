@@ -1,0 +1,3 @@
+[submodule "PeopleSearch/Scripts/react"]
+	path = PeopleSearch/Scripts/react
+	url = https://github.com/franklinjos/peoplesearch/tree/master/PeopleSearch/Scripts/react
