@@ -22,7 +22,7 @@ The system is using react for UI framework, styled-components for the styling ne
 ![Alt text](snapshots/search.JPG?raw=true "Search")
 
 #### Results
-![Alt text](snapshots/search-res.JPG?raw=true "Search results")
+![Alt text](snapshots/search-res1.JPG?raw=true "Search results")
 
 ### Add person form 
 ![Alt text](snapshots/add-person.JPG?raw=true "Add Person")
