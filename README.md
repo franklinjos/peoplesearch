@@ -15,6 +15,11 @@ The system using SQLite as Database. Used ASP.NET Web API for building REST serv
 ## Front-end
 The system is using react for UI framework, styled-components for the styling needs, @blueprintjs for UI components. jest for unit testing.
 
+## Steps to run
+- Clone the repo
+- Open solution in VS 2017 community edition
+- Press F5 from visual studio
+
 ## Screen shots
 
 ### Search 
