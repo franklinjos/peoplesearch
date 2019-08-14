@@ -140,6 +140,20 @@ export function AddPerson(props) {
                         maxLength={50}
                         onVlaueChanged={val => updateAddressValue("Country", val)}
                     />
+                    <FormText
+                        helperText="Should be comma delimited list"
+                        placeHolder="Interests"
+                        isRequired={true}
+                        maxLength={100}
+                        onVlaueChanged={val => {
+                            if (val.trim()) {
+                                updatePersonValue("Interests", JSON.stringify(val.split(",")));
+                            } else {
+                                updatePersonValue("Interests", val);
+                            }
+                        }}
+                    />
+
                     <FormGroup
                         helperText="Shoud be jpeg and not exceed 1 mb"
                         label="Profile picture"

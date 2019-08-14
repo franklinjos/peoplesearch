@@ -52,5 +52,5 @@ export const personModel = {
     }
 };
 
-export const requiredPersonKeys = ["FirstName", "LastName", "DateOfBirth", "Picture"];
+export const requiredPersonKeys = ["FirstName", "LastName", "DateOfBirth", "Picture", "Interests"];
 export const requiredAddressKeys = ["AddressLine1", "City", "State", "ZipCode", "Country"];
