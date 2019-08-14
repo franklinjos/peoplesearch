@@ -40,32 +40,32 @@ export function AddPerson(props) {
     const [person, setPerson] = useState(JSON.parse(JSON.stringify(personModel)));
 
     function updatePersonValue(key, val) {
-        let newPerson = Object.assign({}, person);
+        let newPerson = JSON.parse(JSON.stringify(person));
         newPerson[key] = val;
         setPerson(newPerson);
-        validate();
+        validate(newPerson);
     }
 
     function updateAddressValue(key, val) {
-        let newPerson = Object.assign({}, person);
+        let newPerson = JSON.parse(JSON.stringify(person));
         newPerson.Address[key] = val;
         setPerson(newPerson);
-        validate();
+        validate(newPerson);
     }
 
-    function validate() {
+    function validate(newPerson) {
         let count = 0;
         requiredPersonKeys.forEach(key => {
-            if (!person[key].trim()) {
+            if (!newPerson[key].trim()) {
                 count++;
             }
         });
         requiredAddressKeys.forEach(key => {
-            if (!person.Address[key].trim()) {
+            if (!newPerson.Address[key].trim()) {
                 count++;
             }
         });
-        if (count <= 1) setIsValidInput(true);
+        if (count == 0) setIsValidInput(true);
         else setIsValidInput(false);
     }
     return (
