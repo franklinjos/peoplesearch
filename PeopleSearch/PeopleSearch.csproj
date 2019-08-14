@@ -199,7 +199,37 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\react\.gitignore" />
+    <Content Include="JsApp\react\build\favicon.ico" />
+    <Content Include="JsApp\react\build\index.html" />
+    <Content Include="JsApp\react\build\logo192.png" />
+    <Content Include="JsApp\react\build\logo512.png" />
+    <Content Include="JsApp\react\build\precache-manifest.22a8dca154556902177ed15b26031b60.js" />
+    <Content Include="JsApp\react\build\robots.txt" />
+    <Content Include="JsApp\react\build\service-worker.js" />
+    <Content Include="JsApp\react\build\static\css\2.ef351368.chunk.css" />
+    <Content Include="JsApp\react\build\static\js\2.e3f7f314.chunk.js" />
+    <Content Include="JsApp\react\build\static\js\main.497c0eea.chunk.js" />
+    <Content Include="JsApp\react\build\static\js\runtime~main.d653cc00.js" />
+    <Content Include="JsApp\react\public\favicon.ico" />
+    <Content Include="JsApp\react\public\index.html" />
+    <Content Include="JsApp\react\public\logo192.png" />
+    <Content Include="JsApp\react\public\logo512.png" />
+    <Content Include="JsApp\react\public\robots.txt" />
+    <Content Include="JsApp\react\src\app.js" />
+    <Content Include="JsApp\react\src\common\data-service.js" />
+    <Content Include="JsApp\react\src\common\utils.js" />
+    <Content Include="JsApp\react\src\components\add-person.js" />
+    <Content Include="JsApp\react\src\components\form-text.js" />
+    <Content Include="JsApp\react\src\components\index.js" />
+    <Content Include="JsApp\react\src\components\people.js" />
+    <Content Include="JsApp\react\src\components\person.js" />
+    <Content Include="JsApp\react\src\components\search.js" />
+    <Content Include="JsApp\react\src\index.js" />
+    <Content Include="JsApp\react\src\serviceWorker.js" />
+    <Content Include="JsApp\react\src\styles\global.js" />
+    <Content Include="JsApp\react\src\styles\media.js" />
+    <Content Include="JsApp\react\src\themes\color-palette.js" />
+    <Content Include="JsApp\react\src\unit-test\app.test.js" />
     <Content Include="Scripts\react\build\favicon.ico" />
     <Content Include="Scripts\react\build\index.html" />
     <Content Include="Scripts\react\build\logo192.png" />
@@ -292,6 +322,27 @@
   <ItemGroup>
     <Content Include="Scripts\react\build\asset-manifest.json" />
     <Content Include="Scripts\react\build\manifest.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="JsApp\react\.eslintrc.json" />
+    <Content Include="JsApp\react\.prettierrc" />
+    <Content Include="JsApp\react\build\asset-manifest.json" />
+    <Content Include="JsApp\react\build\manifest.json" />
+    <Content Include="JsApp\react\build\static\css\2.ef351368.chunk.css.map" />
+    <Content Include="JsApp\react\build\static\js\2.e3f7f314.chunk.js.map" />
+    <Content Include="JsApp\react\build\static\js\main.497c0eea.chunk.js.map" />
+    <Content Include="JsApp\react\build\static\js\runtime~main.d653cc00.js.map" />
+    <Content Include="JsApp\react\build\static\media\icons-16.5fa1b8f2.ttf" />
+    <Content Include="JsApp\react\build\static\media\icons-16.6fdb722c.eot" />
+    <Content Include="JsApp\react\build\static\media\icons-16.cd1a2669.woff" />
+    <Content Include="JsApp\react\build\static\media\icons-20.14279fa7.eot" />
+    <Content Include="JsApp\react\build\static\media\icons-20.657723dc.woff" />
+    <Content Include="JsApp\react\build\static\media\icons-20.90247cfd.ttf" />
+    <Content Include="JsApp\react\package.json" />
+    <Content Include="JsApp\react\public\manifest.json" />
+    <Content Include="JsApp\react\README.md" />
+    <Content Include="JsApp\react\src\common\skeleton-data.json" />
+    <Content Include="JsApp\react\yarn.lock" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
