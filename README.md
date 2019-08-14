@@ -12,7 +12,7 @@ In smallest screen system will stack all cards vertically, next three breakpoint
 ### Back-end
 The system using SQLite as Database. Used ASP.NET Web API for building REST service endpoints for CRUD operations. Repoistory Pattern and Dependency Injection is used build the backend. MOQ framework is using for Unit and Integration tests.
 
-## Front-end
+### Front-end
 The system is using react for UI framework, styled-components for the styling needs, @blueprintjs for UI components. jest for unit testing.
 
 ## Steps to run
