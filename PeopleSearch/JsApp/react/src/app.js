@@ -33,7 +33,7 @@ const Header = styled.header`
     margin-left: -20px;
     margin-right: -20px;
     height: 40px;
-    
+
     padding: 5px;
     padding-left: 20px;
     font-size: 1.5rem;
@@ -89,7 +89,14 @@ function App() {
                     <Search onSearch={val => getDataWithDelay(val)} />
                     <AddPerson onAdd={() => getData()} />
                 </SearchAddContainer>
-                <People isError={isError} isLoading={isLoading} people={people}></People>
+                <People
+                    isError={isError}
+                    isLoading={isLoading}
+                    people={people}
+                    onDelete={() => {
+                        getData();
+                    }}
+                ></People>
             </AppContainer>
         </React.Fragment>
     );

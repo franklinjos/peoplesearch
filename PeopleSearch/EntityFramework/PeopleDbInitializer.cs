@@ -1,4 +1,5 @@
 ﻿using PeopleSearch.Models;
+using SQLite.CodeFirst;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
@@ -6,8 +7,12 @@ using System.Web;
 
 namespace PeopleSearch.EntityFramework
 {
-    public class PeopleDbInitializer : DropCreateDatabaseAlways<PeopleContext>
+    public class PeopleDbInitializer : SqliteDropCreateDatabaseAlways<PeopleContext>
     {
+
+        public PeopleDbInitializer(DbModelBuilder modelBuilder)
+       : base(modelBuilder) { }
+
         protected override void Seed(PeopleContext context)
         {
             var curContext = HttpContext.Current;

@@ -1,4 +1,5 @@
 ﻿using PeopleSearch.Models;
+using SQLite.CodeFirst;
 using System.Data.Entity;
 
 namespace PeopleSearch.EntityFramework
@@ -7,18 +8,19 @@ namespace PeopleSearch.EntityFramework
     {
         public PeopleContext() : base("name=PeopleDBConnectionString")
         {
-            Database.SetInitializer<PeopleContext>(new PeopleDbInitializer());
             this.Configuration.ProxyCreationEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            Database.SetInitializer<PeopleContext>(new PeopleDbInitializer(modelBuilder));
             // Configure a one-to-one relationship between Person and Address
             modelBuilder.Entity<Person>()
                 .HasOptional(p => p.Address) // Mark Person.Address property optional (nullable).
                 .WithRequired(ad => ad.Person).WillCascadeOnDelete(true); // Mark Address.Person property as required (NotNull).
-                
-            base.OnModelCreating(modelBuilder);
+            
+
+           base.OnModelCreating(modelBuilder);
         }
 
         public void MarkAsModified(Person item)

@@ -7,14 +7,15 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { Tag, Text, Card, Elevation } from "@blueprintjs/core";
+import { Tag, Text, Card, Elevation, Button } from "@blueprintjs/core";
 
 /** Internal */
 import { formatData } from "../common/utils";
+import { deletePerson } from "../common/data-service";
 
 const StyledCard = styled(Card)`
     display: grid;
-    grid-template-columns: [image]auto [details]1fr;
+    grid-template-columns: [image]auto [details]1fr [del]auto;
     grid-template-rows: 1fr auto;
     justify-content: left;
     align-content: center;
@@ -37,7 +38,12 @@ const Image = styled.img`
 `;
 
 const Interests = styled.div`
-    grid-column: 1/-1;
+    grid-column: 1/3;
+`;
+
+const DelButton = styled(Button)`
+    justify-self: right;
+    grid-column: 4/-1;
 `;
 
 Person.propTypes = {
@@ -59,7 +65,8 @@ Person.propTypes = {
             Country: PropTypes.string.isRequired
         })
     }),
-    isLoading: PropTypes.bool
+    isLoading: PropTypes.bool,
+    onDelete: PropTypes.func
 };
 export function Person(props) {
     const formattedName = props.person.LastName + ", " + props.person.FirstName;
@@ -86,6 +93,7 @@ export function Person(props) {
                 </StyledText>
                 <StyledText className={skeletonLoad}>{props.person.Address.Country}</StyledText>
             </div>
+
             <Interests>
                 {interests.map((interest, index) => (
                     <StyledTag className={skeletonLoad} key={props.person.PersonId + index} round={true} large={false}>
@@ -93,6 +101,14 @@ export function Person(props) {
                     </StyledTag>
                 ))}
             </Interests>
+            <DelButton
+                minimal={true}
+                icon="delete"
+                onClick={async () => {
+                    await deletePerson(props.person.PersonId);
+                    props.onDelete();
+                }}
+            ></DelButton>
         </StyledCard>
     );
 }

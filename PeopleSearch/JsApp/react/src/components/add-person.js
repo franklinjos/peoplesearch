@@ -37,7 +37,7 @@ export function AddPerson(props) {
     const [isValidInput, setIsValidInput] = useState(false);
     const [fileInput, setFileInput] = useState("Choose file...");
     const [isSaving, setIsSaving] = useState(false);
-    const [person, setPerson] = useState(Object.assign({}, personModel));
+    const [person, setPerson] = useState(JSON.parse(JSON.stringify(personModel)));
 
     function updatePersonValue(key, val) {
         let newPerson = Object.assign({}, person);
@@ -54,14 +54,19 @@ export function AddPerson(props) {
     }
 
     function validate() {
+        let count = 0;
         requiredPersonKeys.forEach(key => {
-            if (!person[key]) return;
+            if (!person[key].trim()) {
+                count++;
+            }
         });
         requiredAddressKeys.forEach(key => {
-            if (!person.Address[key]) return;
+            if (!person.Address[key].trim()) {
+                count++;
+            }
         });
-
-        setIsValidInput(true);
+        if (count <= 1) setIsValidInput(true);
+        else setIsValidInput(false);
     }
     return (
         <div>
@@ -69,7 +74,8 @@ export function AddPerson(props) {
                 onClick={() => {
                     setIsOpen(true);
                     setFileInput("");
-                    setPerson(Object.assign({}, personModel));
+                    setPerson(JSON.parse(JSON.stringify(personModel)));
+                    setIsValidInput(false);
                 }}
             >
                 Add Person
@@ -117,11 +123,14 @@ export function AddPerson(props) {
                     <FormText
                         placeHolder="Zip Code"
                         isRequired={true}
+                        helperText="Should be 5 digit number"
                         maxLength={5}
                         onVlaueChanged={val => {
                             let parsed = parseInt(val, 10);
                             if (!isNaN(parsed) && parsed > 10000) {
                                 updateAddressValue("ZipCode", val);
+                            } else {
+                                updateAddressValue("ZipCode", "");
                             }
                         }}
                     />

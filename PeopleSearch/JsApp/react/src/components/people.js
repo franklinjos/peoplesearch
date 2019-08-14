@@ -49,7 +49,8 @@ People.propTypes = {
         })
     ),
     isLoading: PropTypes.bool,
-    isError: PropTypes.bool
+    isError: PropTypes.bool,
+    onDelete: PropTypes.func
 };
 
 export function People(props) {
@@ -57,7 +58,14 @@ export function People(props) {
         <CardsContainer>
             {!props.isError &&
                 props.people.map(person => (
-                    <Person isLoading={props.isLoading} key={person.PersonId} person={person} />
+                    <Person
+                        isLoading={props.isLoading}
+                        key={person.PersonId}
+                        person={person}
+                        onDelete={() => {
+                            props.onDelete();
+                        }}
+                    />
                 ))}
             {props.isError && (
                 <StyledEmptyOrErrorCard elevation={Elevation.TWO}>Sorry failed to laod data.</StyledEmptyOrErrorCard>

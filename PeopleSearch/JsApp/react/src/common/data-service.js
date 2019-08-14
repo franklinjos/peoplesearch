@@ -12,3 +12,8 @@ export async function addPerson(person) {
     let url = window.location.origin + "/api/people/";
     return await axios.post(url, person);
 }
+
+export async function deletePerson(id) {
+    let url = window.location.origin + "/api/people/"+ id;
+    return await axios.delete(url);
+}
